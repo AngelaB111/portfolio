@@ -1,20 +1,44 @@
+import Typewriter from 'typewriter-effect';
 export function Home() {
   return (
     
     <div className="min-h-screen bg-[#020617] flex items-center justify-center p-4">
-  
-      <div className="relative max-w-2xl w-full bg-white/[0.03] backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl overflow-hidden">
+             <div className="absolute bottom-20 w-64 h-64 bg-on-secondary-fixed-variant/40 blur-[500px] rounded-full" />
+         
+      <div className="relative max-w-2xl w-full bg-white/[0.03] backdrop-blur-lg border border-white/10 shadow-[10px_10px_20px_rgba(241,241,241,0.2)] rounded-2xl p-8 md:p-12  overflow-hidden">
         
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-on-primary/40 blur-[500px] rounded-full" />
+             <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-on-primary/40 blur-[500px] rounded-full" />
+         
         <div className="flex items-center gap-3 mb-6 font-inter">
           <h2 className="text-xl font-bold  bg-gradient-to-r from-[#BF953F] to-[#FCF6BA] bg-clip-text text-transparent tracking-tight">Angela Baaity</h2>
-          <span className="px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-bold text-cyan-400 bg-cyan-950/30 border border-cyan-500/30 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.2)]">
-            AI Integration
-          </span>
-          
+          {/* <span className="px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-bold text-cyan-400 bg-cyan-950/30 border border-cyan-500/30 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.2)]">
+            React Developer
+          </span> */}
+          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/5 border border-emerald-500/20">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-[10px] text-emerald-500 font-medium uppercase tracking-tight">Available for collabs</span>
+          </div>
         </div>
         <div className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight">
-            Full-Stack Developer building real-world web & mobile apps with AI drivern features.
+        <h1 className="text-2xl md:text-3xl font-bold text-white leading-[1.2] tracking-tight min-h-[120px] md:min-h-[auto]">
+            Full-Stack Developer building real-world apps with{' '}
+            <span className="text-blue-400 inline-block">
+              <Typewriter
+                options={{
+                  strings: [
+                    'AI-driven features.',
+                    'scalable architecture.',
+                    'seamless UX.',
+                    'modern tech stacks.'
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 50,
+                }}
+              />
+            </span>
           </h1>
           <p className="text-base text-gray-400 font-light">
                I build performant, user-focused products from idea to deployment, ensuring technical precision at every layer of the stack. 

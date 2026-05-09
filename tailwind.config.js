@@ -4,8 +4,31 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        'space-grotesk': ['Space Grotesk', 'sans-serif'],
+        inter: ["Inter", "sans-serif"],
+        "space-grotesk": ["Space Grotesk", "sans-serif"],
+        h2: ["Space Grotesk", "sans-serif"],
+        "body-lg": ["Inter", "sans-serif"],
+        "label-caps": ["Inter", "sans-serif"],
+        code: ["monospace"],
+      },
+      fontSize: {
+        h2: ["2.25rem", { lineHeight: "2.5rem", letterSpacing: "-0.025em" }],
+        h3: ["1.875rem", { lineHeight: "2.25rem" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.75rem" }],
+        "label-caps": [
+          "0.75rem",
+          { lineHeight: "1rem", letterSpacing: "0.05em" },
+        ],
+      },
+      spacing: {
+        unit: "0.25rem",
+        gutter: "1.5rem",
+        xl: "2rem",
+        lg: "1.5rem",
+        sm: "0.75rem",
+      },
+      maxWidth: {
+        "container-max": "1280px",
       },
       colors: {
         midnight: "#101720",
@@ -77,8 +100,17 @@ module.exports = {
         "on-background": "#e1e2ec",
         "surface-variant": "#32353c",
       },
-      
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, addComponents }) {
+      addComponents({
+        ".glass-card": {
+          background: "rgba(255, 255, 255, 0.05)",
+          "backdrop-filter": "blur(10px)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+        },
+      });
+    },
+  ],
 };
