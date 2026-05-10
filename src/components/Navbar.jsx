@@ -8,7 +8,6 @@ export function Navbar() {
       shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
     >
       <div className="flex justify-between font-inter items-center h-16 px-6 max-w-6xl mx-auto">
-        {/* Brand Group */}
         <div className="flex items-center gap-4">
           <div className="relative">
             <img
@@ -16,11 +15,10 @@ export function Navbar() {
               alt="Logo"
               className="h-14 w-14 md:h-11 md:w-11 object-contain rounded-full border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform hover:scale-105"
             />
-            {/* Small online indicator dot */}
+          
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#020617] rounded-full"></span>
           </div>
 
-          {/* This is the "Gap Filler" - The Dev Identity */}
           <div className="hidden sm:flex flex-col border-l border-white/10 pl-4">
             <span className="text-white text-xs font-bold tracking-widest uppercase opacity-90">
               Portfolio
@@ -33,18 +31,13 @@ export function Navbar() {
 
         {/* Navigation Links */}
         <div className="hidden md:flex gap-8 items-center">
-          <a
+          <a 
             className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
             href="#projects"
           >
             Projects
           </a>
-          <a
-            className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
-            href="#skills"
-          >
-            Books
-          </a>
+      
           <a
             className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
             href="#about"
@@ -58,8 +51,6 @@ export function Navbar() {
             Get in Touch
           </a>
         </div>
-
-        {/* Mobile Menu */}
         <button className="md:hidden text-gray-400 hover:text-white">
           <span className="material-symbols-outlined">menu</span>
         </button>

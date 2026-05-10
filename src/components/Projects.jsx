@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import coffee from '../images/coffee1.png'; 
 import {
   FaReact,
@@ -8,16 +8,16 @@ import {
 } from "react-icons/fa";
 
 import {
-   SiMysql,
+  SiPhp, 
+  SiMysql,
   SiNextdotjs,
   SiTailwindcss,
 } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
-export function Projects() {
-  // =========================
-  // PROJECT DATA
-  // =========================
-  const projects = [
+// IMPORTANT: I am exporting the projects array so you can also import it 
+// into your ProjectDetails.jsx file later to display the correct info!
+export const projectsData = [
     {
       id: "alpha",
       title: "Project Alpha",
@@ -31,8 +31,8 @@ export function Projects() {
 
       techStack: [
         {
-          name: "React",
-          icon: FaReact,
+          name: "Php",
+          icon:  SiPhp,
           color: "text-cyan-400",
         },
         {
@@ -119,7 +119,7 @@ export function Projects() {
         liveDemo: "#",
       },
 
-      isActive: true,
+      isActive: false,
     },
 
     {
@@ -173,12 +173,10 @@ export function Projects() {
 
       isActive: false,
     },
-  ];
+];
 
-  // =========================
-  // SELECTED PROJECT
-  // =========================
-  const [selectedProject, setSelectedProject] = useState(null);
+export function Projects() {
+  const navigate = useNavigate();
 
   // =========================
   // PROJECT CARD
@@ -186,7 +184,7 @@ export function Projects() {
   const ProjectCard = ({ project }) => {
   return (
     <div
-      onClick={() => setSelectedProject(project)}
+      onClick={() => navigate(`/project/${project.id}`)}
       className={`
         relative shrink-0 snap-center
         w-[340px] md:w-[500px]
@@ -199,8 +197,8 @@ export function Projects() {
         backdrop-blur-xl
         ${
           project.isActive
-            ? "bg-slate-900/80 border border-blue-500 shadow-[0_0_45px_-10px_rgba(59,130,246,0.65)]"
-            : "bg-slate-900/70 border border-slate-700 hover:border-slate-500"
+            ? "bg-slate-900/80 border border-blue-500 "
+            : "bg-slate-900/70 border border-slate-700 hover:border-slate-500 shadow-[0_0_45px_-10px_rgba(100,100,100,0.65)] hover:shadow-[0_0_45px_-10px_rgba(59,130,246,0.65)]"
         }
       `}
     >
@@ -293,113 +291,10 @@ export function Projects() {
           hide-scrollbar
         "
       >
-        {projects.map((project) => (
+        {projectsData.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
-
-      {/* MODAL */}
-      {selectedProject && (
-        <div
-          className="
-            fixed inset-0 z-50
-            bg-black/70 backdrop-blur-sm
-            flex items-center justify-center
-            p-6
-          "
-        >
-          <div
-            className="
-              bg-[#0f172a]
-              border border-slate-700
-              rounded-3xl
-              max-w-4xl w-full
-              max-h-[90vh]
-              overflow-y-auto
-              p-8
-            "
-          >
-            {/* Close */}
-            <div className="flex justify-end mb-6">
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="
-                  text-slate-400 hover:text-white
-                  text-sm
-                "
-              >
-                Close
-              </button>
-            </div>
-
-            {/* Main Image */}
-            <img
-              src={selectedProject.thumbnail}
-              alt={selectedProject.title}
-              className="
-                w-full h-[320px]
-                object-cover rounded-2xl
-                mb-8
-              "
-            />
-
-            {/* Info */}
-            <h2 className="text-white text-4xl font-bold">
-              {selectedProject.title}
-            </h2>
-
-            <p className="text-slate-400 mt-4 leading-relaxed">
-              {selectedProject.details.fullDescription}
-            </p>
-
-            {/* Features */}
-            <div className="mt-8">
-              <h3 className="text-white text-xl font-semibold mb-4">
-                Features
-              </h3>
-
-              <div className="grid md:grid-cols-2 gap-3">
-                {selectedProject.details.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="
-                      bg-slate-800
-                      border border-slate-700
-                      rounded-xl
-                      p-4 text-slate-300
-                    "
-                  >
-                    {feature}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Gallery */}
-            <div className="mt-10">
-              <h3 className="text-white text-xl font-semibold mb-4">
-                Gallery
-              </h3>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                {selectedProject.details.images.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt=""
-                    className="
-                      rounded-2xl
-                      h-[220px]
-                      w-full
-                      object-cover
-                    "
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
