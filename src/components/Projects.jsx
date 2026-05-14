@@ -1,8 +1,8 @@
 import React from "react";
 import coffee from "../images/coffee/coffeehome.jpg";
 import mental from "../images/mental1.jpg";
-import dashboard from "../images/mental/dashboard1.png"
-import signin from "../images/mental/sign-in.png"
+import dashboard from "../images/mental/dashboard1.png";
+import signin from "../images/mental/sign-in.png";
 import analytics from "../images/mental/analytics.png";
 import assessmentsResult from "../images/mental/assessments-result.png";
 import assessments from "../images/mental/assessments.png";
@@ -26,13 +26,7 @@ import coffeeMenu from "../images/coffee/menu.png";
 import coffeeProfile from "../images/coffee/profile.png";
 import coffeeSignup from "../images/coffee/signup.png";
 import sendMessage from "../images/mental/send-message.png";
-import {
-  FaReact,
-  FaNodeJs,
-  FaHtml5,
-  FaJs,
-  FaCss3Alt,
-} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaHtml5, FaJs, FaCss3Alt } from "react-icons/fa";
 
 import {
   SiPhp,
@@ -159,24 +153,24 @@ export const projectsData = [
             "Added AI-assisted reply generation that therapists can review and edit before sending.",
         },
       ],
-images: [
-    chatbot,
-   dashboard,
-  publicImg,
-  library,
-  assessments,
-  privateMessage,
-  
-  assessmentsResult,
-  sendMessage,
-  getReply,
-  
-  libraryAdmin,
-  adminasses,
-  credentials,
-  analytics,
-  signin
-],
+      images: [
+        chatbot,
+        dashboard,
+        publicImg,
+        library,
+        assessments,
+        privateMessage,
+
+        assessmentsResult,
+        sendMessage,
+        getReply,
+
+        libraryAdmin,
+        adminasses,
+        credentials,
+        analytics,
+        signin,
+      ],
       stats: {
         modules: "10+",
         dashboards: "1",
@@ -242,7 +236,8 @@ images: [
         name: "Express.js",
         icon: SiExpress,
         color: "text-gray-300",
-      }, {
+      },
+      {
         name: "tailwind",
         icon: SiTailwindcss,
         color: "text-gray-300",
@@ -297,76 +292,75 @@ images: [
         "Cloud-hosted database",
         "Backend deployment on Render",
       ],
-      
+
       challenges: [
-      {
-        title: "Cross-Platform Consistency",
-        solution:
-        "Designed similar UI/UX principles across Flutter mobile app and React web application for a unified brand experience.",
-      },
+        {
+          title: "Cross-Platform Consistency",
+          solution:
+            "Designed similar UI/UX principles across Flutter mobile app and React web application for a unified brand experience.",
+        },
 
-      {
-        title: "Dynamic Product Variations",
-        solution:
-          "Implemented relational database tables to support multiple product sizes and pricing variations.",
-      },
+        {
+          title: "Dynamic Product Variations",
+          solution:
+            "Implemented relational database tables to support multiple product sizes and pricing variations.",
+        },
 
-      {
-        title: "Backend Deployment",
-        solution:
-          "Used Railway for MySQL hosting and Render for backend deployment to simulate a production-ready environment.",
+        {
+          title: "Backend Deployment",
+          solution:
+            "Used Railway for MySQL hosting and Render for backend deployment to simulate a production-ready environment.",
         },
       ],
       images: [
-    coffeeMenu,
-    coffeeDetails,
-    coffeeCart,
-    coffeemob,
-    coffeemob1,
-    coffeeLogin,
-    coffeeSignup,
-    coffeeProfile,
-    coffeeAbout,
-    coffeeContact
-        ],
-        
-        stats: {
-          platforms: "2",
-      crudOperations: "4",
-      Developers: "2", 
-      userAuthentication: "Yes",
+        coffeeMenu,
+        coffeeDetails,
+        coffeeCart,
+        coffeemob,
+        coffeemob1,
+        coffeeLogin,
+        coffeeSignup,
+        coffeeProfile,
+        coffeeAbout,
+        coffeeContact,
+      ],
+
+      stats: {
+        platforms: "2",
+        crudOperations: "4",
+        Developers: "2",
+        userAuthentication: "Yes",
+      },
+
+      github: "#",
+
+      liveDemo: "#",
+      tags: [
+        "Flutter",
+        "React",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "Mobile App",
+        "Web App",
+        "E-Commerce",
+      ],
+
+      isFeatured: true,
+
+      isActive: false,
     },
-
-    github: "#",
-
-    liveDemo: "#",
-    tags: [
-      "Flutter",
-      "React",
-      "Node.js",
-      "Express",
-      "MySQL",
-      "Mobile App",
-      "Web App",
-      "E-Commerce",
-    ],
-
-    isFeatured: true,
-
-    isActive: false,
-  },
   },
 ];
 
 export function Projects() {
   const navigate = useNavigate();
-const ProjectCard = ({ project }) => {
-  return (
-    <div
-      onClick={() => navigate(`/project/${project.id}`)}
-      className={`
-        relative shrink-0 snap-center
-        w-[340px] md:w-[500px]
+  const ProjectCard = ({ project }) => {
+    return (
+      <div
+        onClick={() => navigate(`/project/${project.id}`)}
+        className={`
+        relative shrink-0
         min-h-[480px]
         rounded-3xl overflow-hidden
         group cursor-pointer
@@ -375,51 +369,51 @@ const ProjectCard = ({ project }) => {
       bg-slate-900/70 border border-slate-700 hover:border-blue-400
       shadow-[0_0_15px_rgba(244,244,244,0.4)] 
       `}
-    >
-      {/* 1. Image Background/Top Section */}
-      <div className="h-48 w-full overflow-hidden relative">
-        <img
-          src={project.thumbnail}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        {/* Gradient Overlay to blend image into content */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-      </div>
-
-      {/* 2. Content Section */}
-      <div className="p-7 flex flex-col justify-between flex-grow">
-        <div>
-          <h3 className="text-white text-2xl font-black leading-tight mb-1">
-            {project.title}
-          </h3>
-          <p className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
-            {project.subtitle}
-          </p>
-          <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">
-            {project.shortDescription}
-          </p>
+      >
+        {/* 1. Image Background/Top Section */}
+        <div className="h-48 w-full overflow-hidden relative">
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          {/* Gradient Overlay to blend image into content */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
         </div>
 
-        {/* 3. Tech Stack Icons */}
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.techStack.map((tech) => {
-            const Icon = tech.icon;
-            return (
-              <div
-                key={tech.name}
-                title={tech.name}
-                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md"
-              >
-                <Icon className={`text-xl ${tech.color}`} />
-              </div>
-            );
-          })}
+        {/* 2. Content Section */}
+        <div className="p-7 flex flex-col justify-between flex-grow">
+          <div>
+            <h3 className="text-white text-2xl font-black leading-tight mb-1">
+              {project.title}
+            </h3>
+            <p className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
+              {project.subtitle}
+            </p>
+            <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">
+              {project.shortDescription}
+            </p>
+          </div>
+
+          {/* 3. Tech Stack Icons */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            {project.techStack.map((tech) => {
+              const Icon = tech.icon;
+              return (
+                <div
+                  key={tech.name}
+                  title={tech.name}
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md"
+                >
+                  <Icon className={`text-xl ${tech.color}`} />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
   return (
     <section className="bg-[#020617] min-h-screen py-24 overflow-hidden">
       {/* Header */}
@@ -431,15 +425,8 @@ const ProjectCard = ({ project }) => {
         <h2 className="text-white text-5xl font-black">Featured Projects</h2>
       </div>
 
-      {/* Scrollable Projects */}
-      <div
-        className="
-          flex gap-8 overflow-x-auto
-          snap-x snap-mandatory
-          px-8 md:px-20 pb-10
-          hide-scrollbar
-        "
-      >
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 md:px-20 pb-10">
         {projectsData.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

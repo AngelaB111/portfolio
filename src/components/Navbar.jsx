@@ -4,7 +4,8 @@ import { FaArrowLeft } from "react-icons/fa";
 
 export function Navbar() {
   const location = useLocation();
-  const isProjectDetail = location.pathname.startsWith("/project/");
+  const isHome = location.pathname === "/";
+
   return (
     <nav
       className="fixed top-0 w-full z-50 
@@ -13,7 +14,7 @@ export function Navbar() {
     >
       <div className="flex justify-between font-inter items-center h-16 px-6 max-w-6xl mx-auto">
         <div className="flex items-center gap-4">
-          {isProjectDetail && (
+          {!isHome && (
             <Link
               to="/"
               className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
@@ -44,12 +45,12 @@ export function Navbar() {
 
         {/* Navigation Links */}
         <div className="hidden md:flex gap-8 items-center">
-          <a
+          <Link
+            to="/projects"
             className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
-            href="#projects"
           >
             Projects
-          </a>
+          </Link>
 
           <a
             className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
