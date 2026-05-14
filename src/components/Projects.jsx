@@ -1,9 +1,35 @@
 import React from "react";
-import coffee from "../images/coffee1.png";
+import coffee from "../images/coffee/coffeehome.jpg";
+import mental from "../images/mental1.jpg";
+import dashboard from "../images/mental/dashboard1.png"
+import signin from "../images/mental/sign-in.png"
+import analytics from "../images/mental/analytics.png";
+import assessmentsResult from "../images/mental/assessments-result.png";
+import assessments from "../images/mental/assessments.png";
+import chatbot from "../images/mental/chatbot.png";
+import credentials from "../images/mental/credentials.png";
+import getReply from "../images/mental/get-reply.png";
+import libraryAdmin from "../images/mental/Library-admin.png";
+import library from "../images/mental/library.png";
+import adminasses from "../images/mental/admin-assessments.png";
+import privateMessage from "../images/mental/private-message .png";
+import publicImg from "../images/mental/public.png";
+import coffeeAbout from "../images/coffee/about.png";
+import coffeeCart from "../images/coffee/cart.png";
+import coffeeHome from "../images/coffee/coffeehome.jpg";
+import coffeeContact from "../images/coffee/contact.png";
+import coffeeDetails from "../images/coffee/details.png";
+import coffeeHome2 from "../images/coffee/hom2.png";
+import coffeeHome1 from "../images/coffee/home1.png";
+import coffeeHome3 from "../images/coffee/home3.png";
+import coffeeLogin from "../images/coffee/login.png";
+import coffeeMenu from "../images/coffee/menu.png";
+import coffeeProfile from "../images/coffee/profile.png";
+import coffeeSignup from "../images/coffee/signup.png";
+import sendMessage from "../images/mental/send-message.png";
 import {
   FaReact,
   FaNodeJs,
-  FaPython,
   FaFigma,
   FaHtml5,
   FaJs,
@@ -36,15 +62,14 @@ export const projectsData = [
 
     category: "Full Stack Web Application",
 
-    year: "2026",
+    year: "2025",
 
-    status: "In Development",
+    status: "Finished",
 
     shortDescription:
       "Anonymous mental health support platform that combines AI assistance with therapist supervision to provide accessible emotional support.",
 
-    thumbnail:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    thumbnail: mental,
 
     techStack: [
       {
@@ -82,9 +107,9 @@ export const projectsData = [
     details: {
       role: "Full Stack Developer",
 
-      duration: "Senior Year Project",
+      duration: "1 month",
 
-      team: "Individual Project",
+      team: "1",
 
       fullDescription:
         "Silent Support is a web-based mental health support platform designed to provide free, anonymous, and accessible emotional assistance for individuals who may hesitate to seek traditional therapy services. The platform enables users to anonymously submit emotional support requests, communicate with an AI-powered chatbot, complete mental health self-assessments, and access educational resources without registration or exposing personal information. Licensed therapists can securely access a protected dashboard to review messages, prioritize urgent cases, and provide responses with optional AI-generated assistance.",
@@ -103,7 +128,7 @@ export const projectsData = [
           "Developed with PHP and MySQL to manage authentication, anonymous messaging, therapist workflows, AI integrations, and secure data storage.",
 
         aiIntegration:
-          "Integrated AI tools for chatbot conversations, message categorization, urgency detection, and AI-assisted therapist replies.",
+          "Integrated AI tools for chatbot conversations, message categorization, urgency detection, and AI-assisted therapist replies. Trained models on a combination of mental health support data and general conversational data to provide empathetic and contextually relevant responses while ensuring ethical considerations and user safety.",
       },
 
       features: [
@@ -120,16 +145,6 @@ export const projectsData = [
         "Authentication and protected admin routes",
         "Book and assessment management system",
       ],
-
-      workflow: [
-        "User submits anonymous message",
-        "System generates Message ID and Access Code",
-        "AI analyzes and categorizes message",
-        "Urgent messages are flagged for therapists",
-        "Therapist reviews and responds",
-        "User retrieves reply securely",
-      ],
-
       challenges: [
         {
           title: "Maintaining User Anonymity",
@@ -147,24 +162,24 @@ export const projectsData = [
             "Added AI-assisted reply generation that therapists can review and edit before sending.",
         },
       ],
-
-      futureImprovements: [
-        "Multi-therapist support",
-        "Voice-to-text messaging",
-        "Real-time notifications for urgent cases",
-        "More advanced interactive assessments",
-        "Mobile application version",
-        "Multilingual support",
-      ],
-
-      images: [
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
-
-        "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=1200&auto=format&fit=crop",
-      ],
-
+images: [
+    chatbot,
+   dashboard,
+  publicImg,
+  library,
+  assessments,
+  privateMessage,
+  
+  assessmentsResult,
+  sendMessage,
+  getReply,
+  
+  libraryAdmin,
+  adminasses,
+  credentials,
+  analytics,
+  signin
+],
       stats: {
         modules: "10+",
         dashboards: "1",
@@ -230,6 +245,10 @@ export const projectsData = [
         name: "Express.js",
         icon: SiExpress,
         color: "text-gray-300",
+      }, {
+        name: "tailwind",
+        icon: SiTailwindcss,
+        color: "text-gray-300",
       },
       {
         name: "MySQL",
@@ -241,7 +260,7 @@ export const projectsData = [
     details: {
       role: "Backend Developer & Deployment",
 
-      duration: "University Project",
+      duration: "2 weeks",
 
       team: "2 Developers",
 
@@ -281,22 +300,12 @@ export const projectsData = [
         "Cloud-hosted database",
         "Backend deployment on Render",
       ],
-
-      workflow: [
-        "User browses coffee menu",
-        "Products are fetched from backend API",
-        "User views detailed product information",
-        "Selected products are added to cart",
-        "User manages account information",
-        "Contact messages are stored in database",
-      ],
-    },
-
-    challenges: [
+      
+      challenges: [
       {
         title: "Cross-Platform Consistency",
         solution:
-          "Designed similar UI/UX principles across Flutter mobile app and React web application for a unified brand experience.",
+        "Designed similar UI/UX principles across Flutter mobile app and React web application for a unified brand experience.",
       },
 
       {
@@ -309,26 +318,22 @@ export const projectsData = [
         title: "Backend Deployment",
         solution:
           "Used Railway for MySQL hosting and Render for backend deployment to simulate a production-ready environment.",
-      },
-    ],
-
-    futureImprovements: [
-      "Online payment integration",
-      "Order checkout system",
-      "Admin dashboard for inventory management",
-      "Order history tracking",
-    ],
-
-    images: [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop",
-
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop",
-
-      "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop",
-    ],
-
-    stats: {
-      platforms: "2",
+        },
+      ],
+      images: [
+        coffeeHome1,
+    coffeeMenu,
+    coffeeDetails,
+    coffeeCart,
+    coffeeLogin,
+    coffeeSignup,
+    coffeeProfile,
+    coffeeAbout,
+    coffeeContact
+        ],
+        
+        stats: {
+          platforms: "2",
       crudOperations: "4",
       databaseTables: "4",
       userAuthentication: "Yes",
@@ -352,102 +357,71 @@ export const projectsData = [
 
     isActive: false,
   },
+  },
 ];
 
 export function Projects() {
   const navigate = useNavigate();
-
-  // =========================
-  // PROJECT CARD
-  // =========================
-  const ProjectCard = ({ project }) => {
-    return (
-      <div
-        onClick={() => navigate(`/project/${project.id}`)}
-        className={`
+const ProjectCard = ({ project }) => {
+  return (
+    <div
+      onClick={() => navigate(`/project/${project.id}`)}
+      className={`
         relative shrink-0 snap-center
         w-[340px] md:w-[500px]
-        min-h-[420px]
+        min-h-[480px]
         rounded-3xl overflow-hidden
-        p-7
-        flex flex-col justify-between
-        cursor-pointer
-        transition-all duration-300
+        group cursor-pointer
+        transition-all duration-500
         backdrop-blur-xl
-        ${
-          project.isActive
-            ? "bg-slate-900/80 border border-blue-500 "
-            : "bg-slate-900/70 border border-slate-700 hover:border-slate-500 shadow-[0_0_45px_-10px_rgba(100,100,100,0.65)] hover:shadow-[0_0_45px_-10px_rgba(59,130,246,0.65)]"
-        }
+      bg-slate-900/70 border border-slate-700 hover:border-blue-400
+      shadow-[0_0_15px_rgba(244,244,244,0.4)] 
       `}
-      >
-        {/* Soft Background Glow */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-40 h-40 bg-blue-500 blur-3xl" />
-        </div>
+    >
+      {/* 1. Image Background/Top Section */}
+      <div className="h-48 w-full overflow-hidden relative">
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        {/* Gradient Overlay to blend image into content */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+      </div>
 
-        {/* TOP CONTENT */}
-        <div className="relative z-10">
-          <h3 className="text-white text-3xl font-black leading-tight">
+      {/* 2. Content Section */}
+      <div className="p-7 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 className="text-white text-2xl font-black leading-tight mb-1">
             {project.title}
           </h3>
-
-          <h4 className="text-white text-3xl font-black leading-tight">
+          <p className="text-blue-400 text-xs font-bold uppercase tracking-wider mb-3">
             {project.subtitle}
-          </h4>
-
-          <p className="text-slate-400 text-sm mt-4 max-w-[70%] leading-relaxed">
+          </p>
+          <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">
             {project.shortDescription}
           </p>
         </div>
 
-        {/* BOTTOM SECTION */}
-        <div className="relative z-10 mt-8 flex justify-between items-end gap-6">
-          {/* TECH STACK */}
-          <div className="flex gap-3">
-            {project.techStack.map((tech) => {
-              const Icon = tech.icon;
-
-              return (
-                <div
-                  key={tech.name}
-                  className="
-                  w-14 h-14 rounded-2xl
-                  bg-black/40
-                  border border-white/10
-                  flex items-center justify-center
-                  backdrop-blur-md
-                "
-                >
-                  <Icon className={`text-3xl ${tech.color}`} />
-                </div>
-              );
-            })}
-          </div>
-
-          {/* IMAGE SECTION */}
-          <div
-            className="
-    w-[220px]
-    h-[150px]
-    rounded-2xl
-    overflow-hidden
-    border border-white/10
-    shadow-2xl
-    bg-slate-800
-    shrink-0
-  "
-          >
-            <img
-              src={project.thumbnail}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        {/* 3. Tech Stack Icons */}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {project.techStack.map((tech) => {
+            const Icon = tech.icon;
+            return (
+              <div
+                key={tech.name}
+                title={tech.name}
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md"
+              >
+                <Icon className={`text-xl ${tech.color}`} />
+              </div>
+            );
+          })}
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
   return (
     <section className="bg-[#020617] min-h-screen py-24 overflow-hidden">
       {/* Header */}
