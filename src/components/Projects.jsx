@@ -16,12 +16,11 @@ import privateMessage from "../images/mental/private-message .png";
 import publicImg from "../images/mental/public.png";
 import coffeeAbout from "../images/coffee/about.png";
 import coffeeCart from "../images/coffee/cart.png";
-import coffeeHome from "../images/coffee/coffeehome.jpg";
 import coffeeContact from "../images/coffee/contact.png";
+
+import coffeemob from "../images/coffee/coffeemob.jpg";
+import coffeemob1 from "../images/coffee/coffeemob1.jpg";
 import coffeeDetails from "../images/coffee/details.png";
-import coffeeHome2 from "../images/coffee/hom2.png";
-import coffeeHome1 from "../images/coffee/home1.png";
-import coffeeHome3 from "../images/coffee/home3.png";
 import coffeeLogin from "../images/coffee/login.png";
 import coffeeMenu from "../images/coffee/menu.png";
 import coffeeProfile from "../images/coffee/profile.png";
@@ -30,7 +29,6 @@ import sendMessage from "../images/mental/send-message.png";
 import {
   FaReact,
   FaNodeJs,
-  FaFigma,
   FaHtml5,
   FaJs,
   FaCss3Alt,
@@ -39,7 +37,6 @@ import {
 import {
   SiPhp,
   SiMysql,
-  SiNextdotjs,
   SiTailwindcss,
   SiExpress,
   SiChartdotjs,
@@ -321,10 +318,11 @@ images: [
         },
       ],
       images: [
-        coffeeHome1,
     coffeeMenu,
     coffeeDetails,
     coffeeCart,
+    coffeemob,
+    coffeemob1,
     coffeeLogin,
     coffeeSignup,
     coffeeProfile,
@@ -335,11 +333,11 @@ images: [
         stats: {
           platforms: "2",
       crudOperations: "4",
-      databaseTables: "4",
+      Developers: "2", 
       userAuthentication: "Yes",
     },
 
-    github: "https://github.com/AngelaB111/Flutter-Coffee-store",
+    github: "#",
 
     liveDemo: "#",
     tags: [

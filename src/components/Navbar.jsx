@@ -1,6 +1,10 @@
 import logo from "../images/logo.jpg";
+import { Link, useLocation } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 export function Navbar() {
+  const location = useLocation();
+  const isProjectDetail = location.pathname.startsWith("/project/");
   return (
     <nav
       className="fixed top-0 w-full z-50 
@@ -9,13 +13,22 @@ export function Navbar() {
     >
       <div className="flex justify-between font-inter items-center h-16 px-6 max-w-6xl mx-auto">
         <div className="flex items-center gap-4">
+          {isProjectDetail && (
+            <Link
+              to="/"
+              className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+              title="Back to Portfolio"
+            >
+              <FaArrowLeft size={20} />
+            </Link>
+          )}
           <div className="relative">
             <img
               src={logo}
               alt="Logo"
               className="h-14 w-14 md:h-11 md:w-11 object-contain rounded-full border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform hover:scale-105"
             />
-          
+
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#020617] rounded-full"></span>
           </div>
 
@@ -31,13 +44,13 @@ export function Navbar() {
 
         {/* Navigation Links */}
         <div className="hidden md:flex gap-8 items-center">
-          <a 
+          <a
             className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
             href="#projects"
           >
             Projects
           </a>
-      
+
           <a
             className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
             href="#about"

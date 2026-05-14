@@ -48,13 +48,7 @@ export function ProjectDetail() {
     <div
       className={`min-h-screen bg-[#020617] text-slate-300 overflow-x-hidden ${selectedImage ? "overflow-hidden" : ""}`}
     >
-    
-      {/* NAVBAR */}
-      <nav className="max-w-7xl mx-auto px-6 lg:px-10 pt-8">
-      
-      </nav>
-
-      <main className="max-w-7xl mx-auto px-6 lg:px-10 pb-32">
+      <main className="pt-10  max-w-7xl mx-auto px-6 lg:px-10 pb-32">
         {/* HERO */}
         <section className="grid lg:grid-cols-2 gap-20 items-center pt-16 mb-36">
           <div>
