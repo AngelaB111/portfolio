@@ -54,7 +54,7 @@ import {
   SiMaterialdesign,
   SiDart, 
 } from "react-icons/si";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const projectsData = [
   {
@@ -348,21 +348,21 @@ export const projectsData = [
       github: "#",
 
       liveDemo: "#",
-      tags: [
-        "Flutter",
-        "React",
-        "Node.js",
-        "Express",
-        "MySQL",
-        "Mobile App",
-        "Web App",
-        "E-Commerce",
-      ],
-
-      isFeatured: true,
-
-      isActive: false,
     },
+
+    tags: [
+      "Flutter",
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Mobile App",
+      "Web App",
+      "E-Commerce",
+    ],
+
+    isFeatured: true,
+    isActive: true,
   },
   {
   id: "plant-shop",
@@ -452,7 +452,8 @@ export const projectsData = [
 
     github: "#", // Add your link here
     liveDemo: "#",
-    tags: [
+    
+  },tags: [
       "Flutter",
       "Dart",
       "UI/UX",
@@ -463,7 +464,6 @@ export const projectsData = [
 
     isFeatured: true,
     isActive: true,
-  },
 }, 
   {
     id: "sms-spam",
@@ -575,8 +575,62 @@ export const projectsData = [
   },
 ];
 
-export function Projects() {
+export function Projects({ preview = false }) {
   const navigate = useNavigate();
+  const featuredProjects = projectsData.filter(
+    (project) => project.isFeatured && project.isActive
+  );
+  const previewProjects = featuredProjects.filter((project) =>
+    ["therapy", "coffee", "plant-shop"].includes(project.id)
+  );
+
+  const FeaturedProjectCard = ({ project }) => {
+    return (
+      <div
+        onClick={() => navigate(`/project/${project.id}`)}
+        className="shrink-0 w-[320px] rounded-3xl overflow-hidden border border-slate-700 bg-slate-900/80 shadow-[0_0_20px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:-translate-y-1 hover:border-blue-400 cursor-pointer"
+      >
+        <div className="h-64 w-full overflow-hidden relative">
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+        </div>
+
+        <div className="p-5 flex flex-col justify-between h-[240px]">
+          <div>
+            <h3 className="text-white text-xl font-black leading-tight mb-2">
+              {project.title}
+            </h3>
+            <p className="text-blue-400 text-xs uppercase tracking-[0.2em] mb-3">
+              {project.subtitle}
+            </p>
+            <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">
+              {project.shortDescription}
+            </p>
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {project.techStack.slice(0, 4).map((tech) => {
+              const Icon = tech.icon;
+              return (
+                <div
+                  key={tech.name}
+                  title={tech.name}
+                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center"
+                >
+                  <Icon className={`text-lg ${tech.color}`} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const ProjectCard = ({ project }) => {
     return (
       <div
@@ -636,6 +690,43 @@ export function Projects() {
       </div>
     );
   };
+  if (preview) {
+    return (
+      <section className="bg-[#020617] py-24 overflow-hidden">
+        <div className="px-8 md:px-20 mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-blue-400 text-sm uppercase tracking-[0.2em] mb-3">
+              Featured
+            </p>
+            <h2 className="text-white text-4xl font-black">Featured Projects</h2>
+            <p className="text-slate-400 mt-2 max-w-2xl">
+              Swipe through a hand-picked selection of my top projects.
+            </p>
+          </div>
+
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-slate-700 text-sm font-semibold text-white hover:bg-slate-800 transition"
+          >
+            View All
+          </Link>
+        </div>
+
+        <div className="px-8 md:px-20">
+          <div className="overflow-x-auto overflow-y-hidden pb-4">
+            <div className="flex gap-6 snap-x snap-mandatory">
+              {previewProjects.map((project) => (
+                <div key={project.id} className="snap-start">
+                  <FeaturedProjectCard project={project} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="bg-[#020617] min-h-screen py-24 overflow-hidden">
       {/* Header */}
