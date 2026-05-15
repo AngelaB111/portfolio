@@ -8,29 +8,28 @@ import { Projects } from "./components/Projects";
 import { Routes, Route } from "react-router-dom";
 import { ProjectDetail } from "./components/ProjectDetails";
 import { Section } from "./components/Section";
+import { Journal } from "./components/Journal";
 
 function App() {
-   
   return (
-  
-   <div className="App">
-     <Navbar />
+    <div className="App">
+      <Navbar />
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <>
               <Home />
               <Projects />
-              <Section/> 
+              <Section />
             </>
-          } 
+          }
         />
         <Route path="/project/:id" element={<ProjectDetail />} />
-        
-        <Route path="/projects" element={<Projects/>} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/journal" element={<Journal />} />
       </Routes>
-<Footer />
+      <Footer />
     </div>
   );
 }

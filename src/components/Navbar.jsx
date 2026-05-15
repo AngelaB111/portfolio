@@ -52,12 +52,13 @@ export function Navbar() {
             Projects
           </Link>
 
-          <a
+          <Link
+            to="/journal"
             className="text-gray-400 text-sm font-medium hover:text-white transition-colors"
-            href="#about"
           >
             Journal
-          </a>
+          </Link>
+
           <a
             className="bg-blue-600/10 text-blue-400 border border-blue-500/30 px-5 py-2 rounded-full text-sm font-bold hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.1)]"
             href="#contact"
