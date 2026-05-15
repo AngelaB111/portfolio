@@ -62,7 +62,7 @@ export function Home() {
             </Link>
 
             <button className="px-6 py-2 bg-transparent border border-yellow1/40 hover:border-yellow1/50 text-white text-sm font-semibold rounded-lg transition-all hover:shadow-[0_0_30px_rgba(255,240,133,0.3)]">
-              Contact Me
+              View Certificates 
             </button>
           </div>
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 blur-3xl rounded-full" />

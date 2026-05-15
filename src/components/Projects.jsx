@@ -26,7 +26,20 @@ import coffeeMenu from "../images/coffee/menu.png";
 import coffeeProfile from "../images/coffee/profile.png";
 import coffeeSignup from "../images/coffee/signup.png";
 import sendMessage from "../images/mental/send-message.png";
-import { FaReact, FaNodeJs, FaHtml5, FaJs, FaCss3Alt } from "react-icons/fa";
+
+// ML Project Assets
+import mlDash from "../images/ml/ml-dashboard.png";
+import mlAnalysis from "../images/ml/analysis.png";
+import mlAnalysis2 from "../images/ml/analysis2.png";
+import mlConfusion from "../images/ml/confusion2.png";
+import mlEval from "../images/ml/evaluation.png";
+import plantthumb from "../images/plant/plantapp.jpg"
+// Plant Project images
+import plantHome from "../images/plant/home.png";
+import plantDetails from "../images/plant/details.png";
+import plantSplash from "../images/plant/plant-login.png";
+import { FaReact, FaNodeJs, FaHtml5, FaJs, FaCss3Alt ,
+  FaVectorSquare,} from "react-icons/fa";
 
 import {
   SiPhp,
@@ -35,14 +48,12 @@ import {
   SiExpress,
   SiChartdotjs,
   SiFlutter,
+  SiScikitlearn,
+  SiPython, 
+  SiPandas,
 } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 
-// IMPORTANT: I am exporting the projects array so you can also import it
-// into your ProjectDetails.jsx file later to display the correct info!
-
-// IMPORTANT: I am exporting the projects array so you can also import it
-// into your ProjectDetails.jsx file later to display the correct info!
 export const projectsData = [
   {
     id: "therapy",
@@ -350,6 +361,215 @@ export const projectsData = [
 
       isActive: false,
     },
+  },
+  {
+  id: "plant-shop",
+  title: "Leaf & Bloom",
+  subtitle: "Elegant Plant E-Commerce Mobile UI",
+  category: "Mobile Application (Frontend)",
+  year: "2026",
+  status: "Completed",
+  shortDescription:
+    "A visually stunning Flutter mobile application for plant enthusiasts, featuring smooth navigation, category-based browsing, and detailed botanical information.",
+  thumbnail: plantthumb, // Replace with your image variable
+  techStack: [
+    {
+      name: "Flutter",
+      icon: SiFlutter,
+      color: "text-cyan-400",
+    },
+    {
+      name: "Dart",
+      icon: SiDart,
+      color: "text-blue-500",
+    },
+    {
+      name: "Material Design",
+      icon: SiMaterialdesign,
+      color: "text-blue-600",
+    },
+  ],
+
+  details: {
+    role: "Frontend Developer & UI Designer",
+    duration: "1 week",
+    team: "Individual Project",
+
+    fullDescription:
+      "Leaf & Bloom is a high-fidelity mobile UI concept developed using Flutter. The application focuses on a 'nature-first' aesthetic, providing users with a seamless experience from a beautiful splash welcome screen to a detailed plant exploration page. It showcases advanced Flutter layout techniques, custom icons, and responsive design tailored for a premium shopping experience.",
+
+    problem:
+      "Many e-commerce mobile interfaces feel cluttered and industrial. For a plant-based shop, the challenge was to create a UI that feels organic, airy, and highlights high-quality photography while remaining intuitive for the user.",
+
+    solution:
+      "I implemented a minimalist design with a soft color palette. Key features include a search-centric discovery home page and a details screen that uses clear typography and spacing to provide essential care information without overwhelming the user.",
+
+    architecture: {
+      frontend:
+        "Built entirely with Flutter, leveraging the Widget tree for a highly modular and reusable component structure. The app uses custom themes to maintain brand consistency across all screens.",
+      stateManagement:
+        "Utilized local state management for UI interactions such as 'favorite' toggles and category switching.",
+    },
+
+    features: [
+      "Custom splash screen with botanical aesthetics",
+      "Interactive plant category filtering",
+      "Dynamic search bar implementation",
+      "Product details page with care level indicators",
+      "Smooth screen transitions and navigation",
+      "Responsive layout for various screen sizes",
+      "Wishlist (Like) functionality UI",
+      "Modern 'Add to Cart' interaction",
+    ],
+
+    challenges: [
+      {
+        title: "Layout Precision",
+        solution:
+          "Achieved the clean, overlapping image effects and custom card shapes using Flutter's Stack and ClipRRect widgets.",
+      },
+      {
+        title: "Visual Hierarchy",
+        solution:
+          "Used varying font weights and a muted color palette to ensure the 'Add to Cart' button and plant images remain the primary focus.",
+      },
+    ],
+    
+    images: [
+      plantSplash,  // plant-login.png
+      plantHome,    // home.png
+      plantDetails, // details.png
+    ],
+
+    stats: {
+      screens: "3+",
+      animations: "Custom",
+      flutterVersion: "3.x",
+      uiFidelity: "High",
+    },
+
+    github: "#", // Add your link here
+    liveDemo: "#",
+    tags: [
+      "Flutter",
+      "Dart",
+      "UI/UX",
+      "Mobile Dev",
+      "E-Commerce UI",
+      "Green Tech",
+    ],
+
+    isFeatured: true,
+    isActive: true,
+  },
+}, 
+  {
+    id: "sms-spam",
+    title: "SMS Guard",
+    subtitle: "Machine Learning Spam Detection System",
+    category: "Machine Learning / Data Science",
+    year: "2025",
+    status: "Finished",
+    shortDescription:
+      "A predictive model that classifies SMS messages as 'ham' or 'spam' using Natural Language Processing and ensemble learning techniques, achieving 98% accuracy.",
+    thumbnail: mlDash, 
+    techStack: [
+      {
+        name: "Python",
+        icon: SiPython, // Standard for ML
+        color: "text-blue-500",
+      },
+      {
+        name: "Scikit-learn",
+        icon: SiScikitlearn,
+        color: "text-orange-400",
+      },
+      {
+        name: "Pandas",
+        icon: SiPandas,
+        color: "text-indigo-500",
+      },
+      {
+        name: "TF-IDF",
+        icon: FaVectorSquare,
+        color: "text-green-400",
+      },
+    ],
+
+    details: {
+      role: "Machine Learning Engineer",
+      duration: "1 week",
+      team: "2",
+      fullDescription:
+        "SMS Guard is an automated solution designed to address the growing issue of SMS spam and potential fraudulent activities in mobile communication. The project utilizes a dataset of 5,572 labeled messages to train and compare two distinct classification models: Naive Bayes and Random Forest. By implementing a robust text-processing pipeline, the system can effectively distinguish between legitimate 'ham' communication and malicious 'spam' with high precision.",
+
+      problem:
+        "The proliferation of mobile communication has led to a significant increase in SMS spam, which negatively affects user experience and facilitates fraud. Traditional rule-based systems often lack the flexibility and accuracy required to keep up with evolving spam tactics.",
+
+      solution:
+        "Implemented a machine learning-based approach that automates the detection process. By training on a large corpus of labeled messages, the system learns to identify patterns and keywords associated with spam, providing a more efficient and accurate alternative to manual or rule-based filtering.",
+
+      architecture: {
+        preprocessing:
+          "The raw text data underwent a rigorous cleaning process involving punctuation removal, tokenization, lowercasing, and the removal of common stopwords to focus on meaningful content.",
+        vectorization:
+          "Numerical feature extraction was performed using Term Frequency-Inverse Document Frequency (TF-IDF) to convert textual data into a format suitable for machine learning algorithms.",
+        modeling:
+          "Deployed a Naive Bayes Classifier for probabilistic text classification and a Random Forest Classifier to leverage ensemble learning for improved performance.",
+      },
+
+      features: [
+        "Text Cleaning & Normalization Pipeline",
+        "Tokenization and Stopword Removal",
+        "TF-IDF Vectorization",
+        "Naive Bayes Probabilistic Modeling",
+        "Random Forest Ensemble Classification",
+        "Performance Evaluation (Precision, Recall, F1-score)",
+        "Confusion Matrix Visualization",
+        "Comparative Model Analysis",
+      ],
+      challenges: [
+        {
+          title: "Optimizing Detection Accuracy",
+          solution:
+            "Evaluated multiple algorithms, ultimately determining that Naive Bayes provided a better balance with a higher recall and F1-score for spam detection.",
+        },
+        {
+          title: "Minimizing False Negatives",
+          solution:
+            "Prioritized Naive Bayes' higher recall for spam (88%) to ensure fewer malicious messages were missed by the system.",
+        },
+      ],
+      images: [
+       mlDash,      
+        mlAnalysis, 
+        mlAnalysis2, 
+        mlConfusion, 
+        mlEval,     
+      ],
+      stats: {
+        datasetSize: "5,572",
+        maxAccuracy: "98%",
+        spamRecall: "88%",
+        modelsTrained: "2",
+      },
+
+      github: "#", // Add your repo link
+      liveDemo: "#", 
+    },
+
+    tags: [
+      "Machine Learning",
+      "NLP",
+      "Python",
+      "Data Science",
+      "Spam Detection",
+      "Naive Bayes",
+      "Random Forest",
+    ],
+
+    isFeatured: true,
+    isActive: true,
   },
 ];
 

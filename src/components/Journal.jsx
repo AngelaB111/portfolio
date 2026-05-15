@@ -1,85 +1,119 @@
 import React from "react";
 
+import awsImg from "../images/journal/aws.png";
+import ccnaImg from "../images/journal/ccna.png";
+import awspdf from "../journal/aws.pdf";
+import ccnapdf from "../journal/ccna.pdf";
+
+import iotimg from "../images/journal/iot.png";
+import iotpdf from "../journal/iot.pdf";
 export function Journal() {
   const sections = [
     {
       title: "Certifications",
       items: [
         {
-          title: "[Add Your Certification Name]",
-          org: "[Issuing Organization]",
-          date: "[Month Year]",
-          details: "[What you learned / why it matters]",
-          imageSrc: "/images/journal/aws.jpg",
-          imageAlt: "Certification photo (optional)",
+          title: "Cloud Practitioner",
+          org: "Amazon Web Services (AWS)",
+          date: "[12-2025]",
+          details:
+            "Validated foundational knowledge of cloud concepts, security, technology, and billing. Achieved a score of 783/1000, demonstrating proficiency in AWS core services and infrastructure.",
+          imageSrc: awsImg,
+          imageAlt: "aws certification",
           files: [
             {
               label: "Certificate PDF",
-              href: "/journal/aws.pdf",
+              href: awspdf,
             },
           ],
         },
         {
-          title: "[Add Your Certification Name]",
-          org: "[Issuing Organization]",
-          date: "[Month Year]",
-          details: "[What you learned / why it matters]",
-        },
-      ],
-    },
-    {
-      title: "Research & Experiments",
-      items: [
-        {
-          title: "[Topic] — [Short outcome]",
-          date: "[Month Year]",
+          title: "CCNaV7",
+          org: "Cisco Networking academy ",
+          date: "[2024]",
           details:
-            "[1-3 lines summarizing what you researched, key findings, and what you applied to your projects.]",
+            "Covered the architecture, structure, functions, and components of the Internet and other computer networks. Specialized in IP addressing, Ethernet switching, and basic routing principles.",
+          imageSrc: ccnaImg,
+          imageAlt: "ccnav7 certification",
           files: [
             {
-              label: "Experiment notes",
-              href: "/journal/experiment-notes.txt",
+              label: "Certificate PDF",
+              href: ccnapdf,
+            },
+          ],
+        },  {
+          title: "Introduction to IoT and Digital Transformation",
+          org: "Cisco Networking academy ",
+          date: "[2024]",
+          details:
+            "Explored the ecosystem of interconnected devices and how digital transformation leverages data, automation, and security to solve real-world problems. Gained a foundational understanding of IoT architecture, sensor networks, and edge-to-cloud data processing pipelines.",    imageSrc: iotimg,
+          imageAlt: "iot certification",
+          files: [
+            {
+              label: "iot PDF",
+              href: iotpdf,
             },
           ],
         },
-        {
-          title: "[Topic] — [Short outcome]",
-          date: "[Month Year]",
-          details:
-            "[1-3 lines summarizing what you researched, key findings, and what you applied to your projects.]",
-        },
       ],
     },
+    // {
+    //   title: "Research & Experiments",
+    //   items: [
+    //     {
+    //       title: "[Topic] — [Short outcome]",
+    //       date: "[Month Year]",
+    //       details:
+    //         "[1-3 lines summarizing what you researched, key findings, and what you applied to your projects.]",
+    //       files: [
+    //         {
+    //           label: "Experiment notes",
+    //           href: "/journal/experiment-notes.txt",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: "[Topic] — [Short outcome]",
+    //       date: "[Month Year]",
+    //       details:
+    //         "[1-3 lines summarizing what you researched, key findings, and what you applied to your projects.]",
+    //     },
+    //   ],
+    // },
     {
       title: "Books I Recommend",
       items: [
         {
-          title: "[Book Title]",
-          author: "[Author]",
-          date: "[When you read it or year]",
+          title: "The Pragmatic Programmer",
+          author: "Andrew Hunt and David Thomas",
           details:
-            "[Most useful idea / chapter / how it impacted your thinking.]",
+            "One of the best books for developing engineering instincts. The ideas around DRY('Don't Repeat Yourself'), ownership, debugging, automation, and thinking long-term are foundational and every developer should get hands on.",
         },
         {
-          title: "[Book Title]",
-          author: "[Author]",
-          date: "[When you read it or year]",
+          title: "Designing Data-Intensive Applications",
+          author: "Martin Kleppmann",
           details:
-            "[Most useful idea / chapter / how it impacted your thinking.]",
+            "This book is excellent if you want to stand out for backend/distributed systems roles. It will deepen your understanding of scalable system design and distributed architectures, influencing how you think about building reliable backend systems.",
+        },
+        {
+          title: "A Philosophy of Software Design",
+          author: "John Ousterhout",
+          details:
+            "This book focuese onfocuses on managing complexity, practical design decisions, abstraction depth and readability.",
         },
       ],
     },
-    {
-      title: "Notes & Highlights",
-      items: [
-        {
-          title: "[Key takeaway]",
-          date: "[Month Year]",
-          details:
-            "[A bullet/paragraph you want to remember—framework choices, architecture lessons, best practices, etc.]",
-        },
-      ],
-    },
+    // {
+    //   title: "Notes & Highlights",
+    //   items: [
+    //     {
+    //       title: "[Key takeaway]",
+    //       date: "[Month Year]",
+    //       details:
+    //         "[A bullet/paragraph you want to remember—framework choices, architecture lessons, best practices, etc.]",
+    //     },
+    //   ],
+    // },
   ];
 
   return (
@@ -141,7 +175,7 @@ export function Journal() {
                       <img
                         src={item.imageSrc}
                         alt={item.imageAlt || item.title}
-                        className="mt-4 w-full rounded-2xl border border-white/10 bg-slate-800/50"
+                        className="mt-4 w-80 border border-white/10 bg-slate-800/50"
                         loading="lazy"
                       />
                     )}
