@@ -51,6 +51,8 @@ import {
   SiScikitlearn,
   SiPython, 
   SiPandas,
+  SiMaterialdesign,
+  SiDart, 
 } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 
