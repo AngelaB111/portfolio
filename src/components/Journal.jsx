@@ -17,7 +17,7 @@ export function Journal() {
           org: "Amazon Web Services (AWS)",
           date: "[12-2025]",
           details:
-            "Validated foundational knowledge of cloud concepts, security, technology, and billing. Achieved a score of 783/1000, demonstrating proficiency in AWS core services and infrastructure.",
+            "Validated foundational knowledge of cloud concepts, security, technology, and billing. Demonstrating proficiency in AWS core services and infrastructure.",
           imageSrc: awsImg,
           imageAlt: "aws certification",
           files: [
@@ -41,12 +41,14 @@ export function Journal() {
               href: ccnapdf,
             },
           ],
-        },  {
+        },
+        {
           title: "Introduction to IoT and Digital Transformation",
           org: "Cisco Networking academy ",
           date: "[2024]",
           details:
-            "Explored the ecosystem of interconnected devices and how digital transformation leverages data, automation, and security to solve real-world problems. Gained a foundational understanding of IoT architecture, sensor networks, and edge-to-cloud data processing pipelines.",    imageSrc: iotimg,
+            "Explored the ecosystem of interconnected devices and how digital transformation leverages data, automation, and security to solve real-world problems. Gained a foundational understanding of IoT architecture, sensor networks, and edge-to-cloud data processing pipelines.",
+          imageSrc: iotimg,
           imageAlt: "iot certification",
           files: [
             {

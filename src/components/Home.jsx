@@ -1,6 +1,4 @@
 import Typewriter from "typewriter-effect";
-import { Section } from "./Section";
-import { Footer } from "./Footer";
 import { Link } from "react-router-dom";
 export function Home() {
   return (
