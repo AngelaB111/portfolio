@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 export function Navbar() {
   const location = useLocation();
-  const isHome = location.pathname === "/portfolio/";
+  const isHome = location.pathname === "/";
 
   return (
     <nav
