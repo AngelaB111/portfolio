@@ -14,7 +14,7 @@ export function Footer() {
           <div className="flex gap-lg">
             <a
               className="font-code text-on-surface-variant hover:text-secondary transition-colors"
-              href="https://github.com/angelab111"
+              href="https://github.com/AngelaBaaity"
             >
               Github
             </a>

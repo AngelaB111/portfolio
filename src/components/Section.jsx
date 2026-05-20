@@ -37,7 +37,7 @@ export function Section(){
             </div>
 
             <div className="flex justify-center items-center gap-sm font-body-lg text-on-surface-variant pt-md pb-lg">
-              <a href="https://github.com/angelab111" className="hover:text-primary transition-colors">
+              <a href="https://github.com/AngelaBaaity" className="hover:text-primary transition-colors">
                 GitHub
               </a>
               <span className="text-on-surface-variant/50">·</span>
