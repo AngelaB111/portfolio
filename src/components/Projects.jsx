@@ -55,6 +55,7 @@ import {
   SiDart, 
 } from "react-icons/si";
 import { Link, useNavigate } from "react-router-dom";
+import { Designs } from "./Designs";
 
 export const projectsData = [
   {
@@ -191,7 +192,7 @@ export const projectsData = [
         userRoles: "3",
       },
 
-      github: "#",
+      github: "https://github.com/AngelaBaaity/Silent-support",
 
       liveDemo: "#",
     },
@@ -345,7 +346,7 @@ export const projectsData = [
         userAuthentication: "Yes",
       },
 
-      github: "#",
+      github: "https://github.com/AngelaBaaity/React-coffee-store",
 
       liveDemo: "#",
     },
@@ -450,7 +451,7 @@ export const projectsData = [
       uiFidelity: "High",
     },
 
-    github: "#", // Add your link here
+    github: "https://github.com/AngelaBaaity/plantapp-flutterApp", // Add your link here
     liveDemo: "#",
     
   },tags: [
@@ -556,7 +557,7 @@ export const projectsData = [
         modelsTrained: "2",
       },
 
-      github: "#", // Add your repo link
+      github: "https://github.com/AngelaBaaity/SMS-Spam-Detection-Python-machineLearning", // Add your repo link
       liveDemo: "#", 
     },
 
@@ -744,6 +745,7 @@ export function Projects({ preview = false }) {
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
+      <Designs/>
     </section>
   );
 }

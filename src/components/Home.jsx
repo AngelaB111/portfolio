@@ -9,7 +9,7 @@ export function Home() {
 
         <div className="absolute bottom-20 w-64 h-64 bg-on-secondary-fixed-variant/40 blur-[500px] rounded-full" />
 
-        <div className="relative max-w-2xl w-full bg-white/[0.03] backdrop-blur-lg border border-white/10 shadow-[10px_10px_20px_rgba(241,241,241,0.2)] rounded-2xl p-8 md:p-12  overflow-hidden">
+        <div className="relative max-w-2xl w-11/12 bg-white/[0.03] backdrop-blur-lg border border-white/10 shadow-[10px_10px_20px_rgba(241,241,241,0.2)] rounded-2xl p-8 md:p-12  overflow-hidden">
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-on-primary/40 blur-[500px] rounded-full" />
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-on-primary/40 blur-[500px] rounded-full" />
 
