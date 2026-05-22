@@ -36,10 +36,10 @@ export function Navbar() {
           </div>
 
           <div className="hidden sm:flex flex-col border-l border-white/10 pl-4">
-            <span className="text-white text-xs font-bold tracking-widest uppercase opacity-90">
+            <span className="text-white text-s font-bold tracking-widest uppercase opacity-90">
               Portfolio
             </span>
-            <span className="text-blue-400 text-[10px] font-medium tracking-tight leading-none">
+            <span className="text-blue-400 text-[15px] font-medium tracking-tight leading-none">
               v2.026 // Full Stack
             </span>
           </div>
@@ -48,14 +48,14 @@ export function Navbar() {
         {/* Navigation Links */}
         <div className="hidden md:flex gap-8 items-center">
           <Link to="/projects" className="group relative">
-            <span className="text-gray-300 text-sm font-medium transition-colors group-hover:text-white">
+            <span className="text-gray-300 text-m font-medium transition-colors group-hover:text-white">
               Projects
             </span>
             <span className="absolute -bottom-1 left-0 h-[2px] w-0 group-hover:w-full bg-blue-400 rounded transition-all duration-300" />
           </Link>
 
           <Link to="/journal" className="group relative">
-            <span className="text-gray-300 text-sm font-medium transition-colors group-hover:text-white">
+            <span className="text-gray-300 text-m font-medium transition-colors group-hover:text-white">
               Journal
             </span>
             <span className="absolute -bottom-1 left-0 h-[2px] w-0 group-hover:w-full bg-blue-400 rounded transition-all duration-300" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dunkin from "../images/design/dunkin.png";
 import dunkin1 from "../images/design/dunkin2.png";
 
@@ -37,6 +37,19 @@ export const cases = [
   },
 ];
 export function Designs() {
+  const [previewImage, setPreviewImage] = useState(null);
+  const [previewAlt, setPreviewAlt] = useState("");
+
+  const openImagePreview = (src, alt) => {
+    setPreviewImage(src);
+    setPreviewAlt(alt);
+  };
+
+  const closeImagePreview = () => {
+    setPreviewImage(null);
+    setPreviewAlt("");
+  };
+
   return (
     <div className="min-h-screen bg-[#020617] text-white">
       {/* Page top padding to account for fixed navbar */}
@@ -137,11 +150,21 @@ export function Designs() {
                       </div>
                       <img
                         src={
-                          c.beforeImg.dunkin ? c.beforeImg.dunkin : c.beforeImg
+                          typeof c.beforeImg === "object"
+                            ? Object.values(c.beforeImg)[0]
+                            : c.beforeImg
                         }
                         alt={`${c.title} - before`}
-                        className="w-full h-auto object-fit transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="w-full h-72 object-cover block cursor-pointer transition-transform duration-500 group-hover:scale-[1.04]"
                         loading="lazy"
+                        onClick={() =>
+                          openImagePreview(
+                            typeof c.beforeImg === "object"
+                              ? Object.values(c.beforeImg)[0]
+                              : c.beforeImg,
+                            `${c.title} - before`,
+                          )
+                        }
                       />
                     </div>
 
@@ -156,11 +179,21 @@ export function Designs() {
                       </div>
                       <img
                         src={
-                          c.afterImg.dunkin1 ? c.afterImg.dunkin1 : c.afterImg
+                          typeof c.afterImg === "object"
+                            ? Object.values(c.afterImg)[0]
+                            : c.afterImg
                         }
                         alt={`${c.title} - after`}
-                        className="w-full h-auto object-fit transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="w-full h-72 object-cover block cursor-pointer transition-transform duration-500 group-hover:scale-[1.04]"
                         loading="lazy"
+                        onClick={() =>
+                          openImagePreview(
+                            typeof c.afterImg === "object"
+                              ? Object.values(c.afterImg)[0]
+                              : c.afterImg,
+                            `${c.title} - after`,
+                          )
+                        }
                       />
                     </div>
                   </div>
@@ -183,6 +216,29 @@ export function Designs() {
           </div>
         </div>
       </div>
+
+      {previewImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={closeImagePreview}
+        >
+          <div className="relative max-w-5xl w-full rounded-3xl overflow-hidden bg-slate-950 shadow-2xl">
+            <button
+              type="button"
+              onClick={closeImagePreview}
+              className="absolute top-4 right-4 z-20 rounded-full bg-black/70 px-3 py-2 text-sm font-semibold text-white hover:bg-black"
+            >
+              Close
+            </button>
+            <img
+              src={previewImage}
+              alt={previewAlt}
+              className="w-full max-h-[80vh] object-contain bg-slate-950"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
